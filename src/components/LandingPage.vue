@@ -66,7 +66,6 @@ export default {
 body {
   font-family: Arial, sans-serif;
   background-color: #111;
-  background: url('../assets/venu-bg.jpg') no-repeat center center fixed;
   color: #fff;
   line-height: 1.6;
 }
