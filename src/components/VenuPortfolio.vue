@@ -25,6 +25,7 @@
         <div class="skill">Pinia / Vuex</div>
         <div class="skill">React & Redux</div>
         <div class="skill">CI/CD & GCP</div>
+        <div class="skill">Figma</div>
       </div>
     </section>
 
