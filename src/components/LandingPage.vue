@@ -1,194 +1,112 @@
 <template>
-  <div class="container">
-    <header>
+  <div class="landing-container" id="landing">
+    <nav class="nav-buttons">
+      <button @click="goTo ('landing')">Home</button>
+      <button @click="goTo ('about')">About</button>
+      <button @click="goTo ('skills')">Skills</button>
+      <button @click="goTo ('work')">Work</button>
+      <button @click="goTo ('resume')">Resume</button>
+      <button @click="goTo ('contact')">Contact</button>
+    </nav>
+    <div class="home-section">
       <h1>Venu R</h1>
-      <p>Frontend Developer (Vue, JavaScript, React)</p>
-      <button class="cta">Contact Me</button>
-    </header>
-
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I'm a frontend developer with 3+ years of experience building modern, scalable UIs using Vue (2 & 3), JavaScript, and clean architecture principles. I love working on interactive user experiences and optimizing performance.
-      </p>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">Vue 2 & 3</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">HTML & CSS</div>
-        <div class="skill">Pinia / Vuex</div>
-        <div class="skill">React & Redux</div>
-        <div class="skill">CI/CD & GCP</div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/venur7831" target="_blank">
+          linkedin
+        </a>
+        <a href="https://www.instagram.com/venur7831" target="_blank">
+           instagram
+        </a>
       </div>
-    </section>
- <section>
-      <h2>Work Experience</h2>
-      <div class="work-item">
-        <img :src=quinbayLogo alt="Quinbay Logo" class="logo" />
-        <div>
-          <h3>Frontend Developer at Quinbay</h3>
-          <p class="duration">March 2022 – May 2025</p>
-          <p>
-            Developed and maintained e-commerce platforms using Vue.js, managed pricing, campaigns, flash sales, and optimized performance across complex seller-side dashboards.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 Venu R • <a href="venur7831@gmail.com" style="color: #888">venur7831@gmail.com</a>
-    </footer>
+    </div>
   </div>
 </template>
 
 <script>
-import quinbayLogo from '../assets/quinbay-logo.png'
+
 export default {
-    name: 'LandingPage',
-    data () {
-        return {
-           quinbayLogo 
-        }
+  name: 'LandingPage',
+  data() {
+    return {
     }
-
+  },
+methods: {
+  goTo(sectionId) {
+    if(sectionId.includes('landing')) {
+      this.$router.push({ path: '/my-portfolio/'});
+    } else {
+         this.$router.push({ path: '/my-portfolio/venu-portfolio', hash: `#${sectionId}` });
+    }
+  }
 }
-
+}
 </script>
-<style>
-* {
+
+<style scoped>
+html, body {
   margin: 0;
   padding: 0;
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
   box-sizing: border-box;
 }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #111;
+.landing-container {
+  position: fixed;
+  inset: 0;
+  background: url('../assets/venu-pic.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
-  line-height: 1.6;
+  overflow: hidden;
 }
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+.nav-buttons {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-
-header {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-header h1 {
-  font-size: 3rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #aaa;
-  margin-top: 10px;
-}
-
-button.cta {
-  margin-top: 20px;
-  padding: 10px 25px;
-  font-size: 1rem;
-  background-color: #4f46e5;
-  color: white;
+.nav-buttons button {
+  background: rgba(0, 0, 0, 0.6);
   border: none;
+  color: #fff;
+  padding: 0.75rem 1rem;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.2s ease;
 }
-
-button.cta:hover {
-  background-color: #3730a3;
+.nav-buttons button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.05) translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
-
-section {
-  margin-top: 50px;
+.nav-buttons button:active {
+  transform: scale(0.98);
 }
-
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #444;
-  padding-bottom: 5px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.skill {
-  background-color: #222;
-  padding: 15px;
+.home-section {
   text-align: center;
-  border-radius: 6px;
-  border: 1px solid #333;
 }
-
-footer {
-  margin-top: 60px;
-  padding: 20px;
-  background-color: #1a1a1a;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #aaa;
+.home-section h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
 }
-/* ...existing CSS... */
-
-
-.logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-
-.duration {
-  font-size: 0.95rem;
-  color: #aaa;
-  margin: 5px 0;
-}
-.skill {
-  background-color: #1c1c1c;
-  padding: 15px;
-  text-align: center;
-  border-radius: 10px;
-  border: 1px solid #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s;
-}
-
-.skill:hover {
-  transform: translateY(-5px);
-}
-
-.work-item {
+.social-links {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  background-color: #1c1c1c;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #333;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  margin-top: 20px;
-  transition: transform 0.2s;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
-
-.work-item:hover {
-  transform: translateY(-5px);
+.social-links img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s ease;
 }
-.skill,
-.work-item {
-  transition: transform 0.2s, box-shadow 0.2s;
+.social-links img:hover {
+  transform: scale(1.1);
 }
-
-
 </style>
-

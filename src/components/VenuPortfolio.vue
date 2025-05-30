@@ -1,87 +1,219 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-purple-100 via-pink-100 to-yellow-100 p-8 transition duration-300 dark:bg-gray-900 dark:text-white">
-    <div class="max-w-4xl mx-auto space-y-8">
-      <header class="text-center">
-        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile" class="w-24 h-24 mx-auto rounded-full border-4 border-pink-400 shadow-md" />
-        <h1 class="text-4xl font-extrabold mt-4 text-pink-700 dark:text-pink-300">Venu R</h1>
-        <p class="text-lg text-gray-700 dark:text-gray-200">
-          Frontend Developer | Vue.js Expert | JavaScript Enthusiast
-        </p>
-      </header>
+  <div class="background">
+  <div class="container">
+    <div id="about">
+    <header>
+      <h1>Venu R</h1>
+      <p>Frontend Developer (Vue, JavaScript, React)</p>
+    </header>
 
-      <section>
-        <h2 class="text-2xl font-semibold mb-4 text-purple-700 dark:text-purple-300">About Me</h2>
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-l-4 border-pink-500">
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm a frontend developer with 3+ years of experience building modern, scalable UIs using Vue (2 & 3),
+         JavaScript, and clean architecture principles. I love working on interactive user experiences and optimizing performance.
+      </p>
+    </section>
+    </div>
+     <!-- <About /> -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">Vue 2 & 3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">Pinia / Vuex</div>
+        <div class="skill">React & Redux</div>
+        <div class="skill">CI/CD & GCP</div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Work Experience</h2>
+      <div class="work-item">
+        <img :src="quinbayLogo" width="100px" height="100px" alt="Quinbay Logo" class="logo" />
+        <div>
+          <h3>Frontend Developer at Quinbay</h3>
+          <p class="duration">March 2022 – May 2025</p>
           <p>
-            I’m a Frontend Developer with 3.2+ years of experience building scalable and performant web apps using Vue 2, Vue 3, JavaScript, HTML, and CSS. I specialize in e-commerce platforms, pricing & promotions systems, and campaign management. Currently working at <strong>Quinaby</strong> where I contribute to designing user-friendly promotional logic and campaign modules.
+            Developed and maintained e-commerce platforms using Vue.js, managed pricing, campaigns, flash sales, and optimized performance across complex seller-side dashboards.
           </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2 class="text-2xl font-semibold mb-4 text-purple-700 dark:text-purple-300">Projects</h2>
-        <div class="grid gap-4 md:grid-cols-2">
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 border-t-4 border-yellow-400">
-            <img src="https://via.placeholder.com/400x200?text=Migration+Project" alt="Vue Migration" class="rounded mb-2" />
-            <h3 class="font-bold text-lg">Vue 2 to Vue 3 Migration</h3>
-            <p>Migrated a production e-commerce platform from Vue 2 to Vue 3 with performance improvements.</p>
-          </div>
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 border-t-4 border-green-400">
-            <img src="https://via.placeholder.com/400x200?text=Flash+Sales" alt="Flash Sales Module" class="rounded mb-2" />
-            <h3 class="font-bold text-lg">Flash Sales Module</h3>
-            <p>Built a flash sale system with countdown timers, promotional badges, and seller configurations.</p>
-          </div>
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 border-t-4 border-pink-400">
-            <img src="https://via.placeholder.com/400x200?text=Voucher+Engine" alt="Voucher Engine" class="rounded mb-2" />
-            <h3 class="font-bold text-lg">Voucher & Discount Engine</h3>
-            <p>Implemented dynamic voucher creation, eligibility rules, and real-time application.</p>
-          </div>
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 border-t-4 border-blue-400">
-            <img src="https://via.placeholder.com/400x200?text=UI+Library" alt="Reusable UI Library" class="rounded mb-2" />
-            <h3 class="font-bold text-lg">Reusable UI Library</h3>
-            <p>Developed a component library with Tailwind and Storybook for internal reuse across teams.</p>
-          </div>
-        </div>
-      </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <a :href="resume" download class="resume-link">Download Resume (PDF)</a>
+    </section>
 
-      <section>
-        <h2 class="text-2xl font-semibold mb-4 text-purple-700 dark:text-purple-300">Skills</h2>
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 border-l-4 border-green-400">
-          <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-200">
-            <li>Vue.js (2 & 3), JavaScript (ES6+), TypeScript</li>
-            <li>HTML5, CSS3, Tailwind CSS, Bootstrap</li>
-            <li>REST APIs, Git, CI/CD</li>
-            <li>Pinia, Vuex, Component-driven design</li>
-            <li>Vite, Webpack, Chrome DevTools</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="text-center mt-8">
-        <a
-          href="mailto:rishabhgoel@email.com"
-          class="inline-block bg-pink-600 text-white px-6 py-3 rounded-xl shadow hover:bg-pink-700 transition"
-        >
-          📧 Contact Me
-        </a>
-        <a
-          href="/venu_r_resume.pdf"
-          download
-          class="ml-4 inline-block bg-purple-600 text-white px-6 py-3 rounded-xl shadow hover:bg-purple-700 transition"
-        >
-          📄 Download Resume
-        </a>
-      </section>
-    </div>
+    <footer id="contact">
+      <h2>Contact</h2>
+      <p  class="contact-number">Phone: +91 7204705335</p>
+      © 2025 Venu R • <a href="mailto:venur7831@gmail.com" class="email-link">venur7831@gmail.com</a>
+    </footer>
+  </div>
   </div>
 </template>
 
-<script setup>
-// no logic needed
+<script>
+import quinbayLogo from '../assets/quinbay-logo.png'
+import resumeFile from '../assets/resume.pdf'
+import About from './About.vue'
+export default {
+  name: 'VenuPortfolio',
+  data() {
+    return {
+      quinbayLogo,
+      resume: resumeFile,
+    }
+  },
+  methods: {
+  },
+  components: {
+    About
+  }
+}
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, sans-serif;
+  background-color:aliceblue;
+  color: #fff;
+   background: url('../assets/image2.jpg');
+  line-height: 1.6;
+}
+.background {
+    background: url('../assets/image2.jpg');
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+button.cta {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.cta:hover {
+  background-color: #3730a3;
+}
+
+.contact-number {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #4ade80;
+}
+
+section {
+  margin-top: 50px;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 5px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.skill {
+  background-color: #1c1c1c;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+.work-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+.work-item:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.resume-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.resume-link:hover {
+  background-color: #1976d2;
+}
+
+.email-link {
+  color: #888;
+  text-decoration: none;
+}
+.logo {
+  border-radius: 6px;
+  box-shadow: 1px 1px;
 }
 </style>
